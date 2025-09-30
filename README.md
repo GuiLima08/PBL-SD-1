@@ -73,7 +73,6 @@ Em análise do produto obtido nesta etapa do desenvolvimento, pode-se afirmar qu
 | Implementar os 4 algoritmos de zoom-in e zoom-out | Cumprido |
 | Imagens em escala de cinza | Parcialmente cumprido (estrias vermelhas foram encontradas) |
 | Controle do zoom através de chaves e botões | Cumprido |
-| Coprocessador compatível com processador ARM | Cumprido |
 
 Em uma análise do processo de desenvolvimento e aprendizado decorrido durante a etapa do PBL, pode-se dizer que os desafios iniciais do problema, e suas subsequentes soluções, culminaram em uma forte e consolidada base de aprendizado, gerando melhor entendimento sobre a estrutura de um coprocessador e elaboração de circuitos verilog, assim como o incentivo de encontrar uma abordagem prática e eficiente para problemas relacionados ao campo de sistemas digitais. O maior desafio encontrado, porém, seria a implementação do sincronismo entre os componentes do sistema; fato evidenciado pelo erro discutido no parágrafo anterior.
 
