@@ -55,7 +55,8 @@ Os algoritmos de **vizinho mais próximo, replicação de pixel, decimação** e
 
 Durante a implementação dos algoritmos em conjunção com o módulo do VGA, os testes foram feitos de forma prática na placa DE1-SoC, juntamente com um monitor VGA. Foi produzida uma imagem específica para testes de sincronismo:
 
-(inserir imagem de xadrez)
+![checker160.jpg](https://github.com/user-attachments/assets/c716bad4-4e0b-4010-95a3-c0e52d8585f7)
+
 
 A imagem acima possui ângulos retos e quadrados perfeitos, utilizados para melhor visualizar erros de sincronismo e *offset*. A área cinza nos lado esquerdo e superior da imagem serve para verificar se a imagem possui duplicação de linhas ou colunas de pixel.
 
