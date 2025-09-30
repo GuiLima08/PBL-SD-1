@@ -43,4 +43,28 @@ O problema consiste na construção de um **coprocessador gráfico** para sistem
 - **VGA**: Exibição da imagem processada.  
 
 ### Periféricos Adicionais  
-- **Monitor 640x480** com entrada VGA.  
+- **Monitor 640x480** com entrada VGA.
+
+## 5. (nycolas coloca tua parte aq)
+
+
+
+## 6. Testes
+
+Os algoritmos de **vizinho mais próximo, replicação de pixel, decimação** e **média de blocos** foram testados utilizando a ferramenta **Icarus Verilog**, um simulador de hardware de código aberto que compila e executa projetos descritos em linguagem Verilog. Os códigos para testes no Icarus Verilog (encontrados na pasta *PBL-SD-1/Testes_Algoritmos* dentro do repositório) utilizaram matrizes pequenas para testar os algoritmos, e foram subsequentemente adaptados para matrizes de larga escala e implementados no projeto.
+
+Durante a implementação dos algoritmos em conjunção com o módulo do VGA, os testes foram feitos de forma prática na placa DE1-SoC, juntamente com um monitor VGA. Foi produzida uma imagem específica para testes de sincronismo:
+
+(inserir imagem de xadrez)
+
+A imagem acima possui ângulos retos e quadrados perfeitos, utilizados para melhor visualizar erros de sincronismo e *offset*. A área cinza nos lado esquerdo e superior da imagem serve para verificar se a imagem possui duplicação de linhas ou colunas de pixel.
+
+
+## 7. Análise dos Resultados
+
+Em análise do produto obtido nesta etapa do desenvolvimento, pode-se afirmar que os requisitos do problema foram implementados. Todos os algoritmos foram implementados, controlados pelo usuário através das chaves e botões da placa, como foi pedido.
+
+Um erro observado, porém, foram *“estrias”* minúsculas de coloração vermelha na imagem, provavelmente um produto de algum erro no sincronismo entre a RAM e o VGA. Tal erro deve ser corrigido na segunda etapa do desenvolvimento.
+
+Em uma análise do processo de desenvolvimento e aprendizado decorrido durante a etapa do PBL, pode-se dizer que os desafios iniciais do problema, e suas subsequentes soluções, culminaram em uma forte e consolidada base de aprendizado, gerando melhor entendimento sobre a estrutura de um coprocessador e elaboração de circuitos verilog, assim como o incentivo de encontrar uma abordagem prática e eficiente para problemas relacionados ao campo de sistemas digitais. O maior desafio encontrado, porém, seria a implementação do sincronismo entre os componentes do sistema; fato evidenciado pelo erro discutido no parágrafo anterior.
+
