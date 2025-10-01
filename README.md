@@ -2,13 +2,11 @@
 
 ## Equipe
 
-- **[Davi Medeiros Rocha](https://github.com/UEFS-Davi)**
+- **[Davi Medeiros Rocha](https://github.com/Davi-UEFS)**
 
-- **Guilherme de Oliveira Lima**  
-  [GuiLima08](https://github.com/GuiLima08)
+- **[Guilherme de Oliveira Lima](https://github.com/GuiLima08)**
 
-- **Nycolas de Lima Oliveira Silva**  
-  [NycolasDeLima](https://github.com/NycolasDeLima)
+- **[Nycolas de Lima Oliveira Silva](https://github.com/NycolasDeLima)**
 
 
 ## 1. Introdução  
