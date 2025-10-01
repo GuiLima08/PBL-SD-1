@@ -1,0 +1,20 @@
+Fitter Status : Successful - Wed Oct  1 10:17:48 2025
+Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
+Revision Name : Coprocessor_MichaelRosoft
+Top-level Entity Name : Michael_Rosoft
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 1,257 / 32,070 ( 4 % )
+Total registers : 420
+Total pins : 48 / 457 ( 11 % )
+Total virtual pins : 0
+Total block memory bits : 2,611,200 / 4,065,280 ( 64 % )
+Total RAM Blocks : 320 / 397 ( 81 % )
+Total DSP Blocks : 14 / 87 ( 16 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 1 / 6 ( 17 % )
+Total DLLs : 0 / 4 ( 0 % )
