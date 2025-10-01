@@ -80,3 +80,7 @@ Em uma análise do processo de desenvolvimento e aprendizado decorrido durante a
 ## 8. Observações
 - O código acompanha dois arquivos .mif para teste: "gatinho2_convertido" e "checker160". Para mudar, deve-se alterar o caminho no módulo "ram_initial.v".
 - Similarmente, caso os módulos da RAM não forem instanciados corretamente, eles podem ser criados novamente usando a função RAM 1-PORT do IP Catalog. Note que eles devem ter o mesmo nome, largura e profundidade dos disponibilizados no repositório.
+
+## 9. Bibliografia
+- Manual DE1-SoC <http://www.ee.ic.ac.uk/pcheung/teaching/ee2_digital/de1-soc_user_manual.pdf>
+- Módulo VGA Driver. Adams, V. Hunter <https://vanhunteradams.com/DE1/VGA_Driver/Driver.html> 
