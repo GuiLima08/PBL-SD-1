@@ -77,5 +77,5 @@ Em análise do produto obtido nesta etapa do desenvolvimento, pode-se afirmar qu
 Em uma análise do processo de desenvolvimento e aprendizado decorrido durante a etapa do PBL, pode-se dizer que os desafios iniciais do problema, e suas subsequentes soluções, culminaram em uma forte e consolidada base de aprendizado, gerando melhor entendimento sobre a estrutura de um coprocessador e elaboração de circuitos verilog, assim como o incentivo de encontrar uma abordagem prática e eficiente para problemas relacionados ao campo de sistemas digitais. O maior desafio encontrado, porém, seria a implementação do sincronismo entre os componentes do sistema; fato evidenciado pelo erro discutido no parágrafo anterior.
 
 ## 8. Observações
-# O código acompanha dois arquivos .mif para teste: "gatinho2_convertido" e "checker160". Para mudar, deve-se alterar o caminho no módulo "ram_initial.v".
-# Similarmente, caso os módulos da RAM não forem instanciados corretamente, eles podem ser criados novamente usando a função RAM 1-PORT do IP Catalog. Note que eles devem ter o mesmo nome, largura e profundidade dos disponibilizados no repositório.
+### O código acompanha dois arquivos .mif para teste: "gatinho2_convertido" e "checker160". Para mudar, deve-se alterar o caminho no módulo "ram_initial.v".
+### Similarmente, caso os módulos da RAM não forem instanciados corretamente, eles podem ser criados novamente usando a função RAM 1-PORT do IP Catalog. Note que eles devem ter o mesmo nome, largura e profundidade dos disponibilizados no repositório.
