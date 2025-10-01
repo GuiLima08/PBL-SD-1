@@ -1,15 +1,15 @@
 # Zoom Digital: Redimensionamento de Imagens com FPGA em Verilog  
 
-## 👥 Equipe
+## Equipe
 
 - **Davi Medeiros Rocha**  
-  [github.com/UEFS-Davi](https://github.com/UEFS-Davi)
+  [UEFS-Davi](https://github.com/UEFS-Davi)
 
 - **Guilherme de Oliveira Lima**  
-  [github.com/GuiLima08](https://github.com/GuiLima08)
+  [GuiLima08](https://github.com/GuiLima08)
 
 - **Nycolas de Lima Oliveira Silva**  
-  [github.com/NycolasDeLima](https://github.com/NycolasDeLima)
+  [NycolasDeLima](https://github.com/NycolasDeLima)
 
 
 ## 1. Introdução  
