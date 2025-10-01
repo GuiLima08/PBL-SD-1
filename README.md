@@ -2,8 +2,7 @@
 
 ## Equipe
 
-- **Davi Medeiros Rocha**  
-  [UEFS-Davi](https://github.com/UEFS-Davi)
+- **[Davi Medeiros Rocha](https://github.com/UEFS-Davi)**
 
 - **Guilherme de Oliveira Lima**  
   [GuiLima08](https://github.com/GuiLima08)
