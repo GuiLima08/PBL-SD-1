@@ -75,16 +75,16 @@ A imagem acima possui ângulos retos e quadrados perfeitos, utilizados para melh
 
 ## 7. Análise dos Resultados
 
-Em análise do produto obtido nesta etapa do desenvolvimento, pode-se afirmar que os requisitos do problema foram implementados. Todos os algoritmos foram implementados, controlados pelo usuário através das chaves e botões da placa, como foi pedido. Um erro observado, porém, foram *“estrias”* minúsculas de coloração vermelha na imagem, provavelmente um produto de algum erro no sincronismo entre a RAM e o VGA. Tal erro deve ser corrigido na segunda etapa do desenvolvimento.
+Em análise do produto obtido nesta etapa do desenvolvimento, pode-se afirmar que os requisitos do problema foram implementados. Todos os algoritmos foram implementados, controlados pelo usuário através das chaves e botões da placa, como foi pedido. Um erro observado durante o desenvolvimento foram *“estrias”* minúsculas de coloração vermelha na imagem; tal erro foi solucionado ao alterar a lógica do cálculo do *offset* da imagem, fazendo a verificação e correção de valores inválidos.
 
 | Requisito | Resultado |
 |---|---|
 | Código escrito em Verilog | Cumprido |
 | Implementar os 4 algoritmos de zoom-in e zoom-out | Cumprido |
-| Imagens em escala de cinza | Parcialmente cumprido (estrias vermelhas foram encontradas) |
+| Imagens em escala de cinza | Cumprido |
 | Controle do zoom através de chaves e botões | Cumprido |
 
-Em uma análise do processo de desenvolvimento e aprendizado decorrido durante a etapa do PBL, pode-se dizer que os desafios iniciais do problema, e suas subsequentes soluções, culminaram em uma forte e consolidada base de aprendizado, gerando melhor entendimento sobre a estrutura de um coprocessador e elaboração de circuitos verilog, assim como o incentivo de encontrar uma abordagem prática e eficiente para problemas relacionados ao campo de sistemas digitais. O maior desafio encontrado, porém, seria a implementação do sincronismo entre os componentes do sistema; fato evidenciado pelo erro discutido no parágrafo anterior.
+Em uma análise do processo de desenvolvimento e aprendizado decorrido durante a etapa do PBL, pode-se dizer que os desafios iniciais do problema, e suas subsequentes soluções, culminaram em uma forte e consolidada base de aprendizado, gerando melhor entendimento sobre a estrutura de um coprocessador e elaboração de circuitos verilog, assim como o incentivo de encontrar uma abordagem prática e eficiente para problemas relacionados ao campo de sistemas digitais. O maior desafio encontrado, porém, seria a implementação do sincronismo entre os componentes do sistema, o que gerou diversos obstáculos durante esta etapa; problemas estes que foram corrigidos com sucesso.
 
 ## 8. Observações
 - O código acompanha dois arquivos .mif para teste: "gatinho2_convertido" e "checker160". Para mudar, deve-se alterar o caminho no módulo "ram_initial.v".
