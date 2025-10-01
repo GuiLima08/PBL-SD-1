@@ -25,7 +25,8 @@ O problema consiste na construção de um **coprocessador gráfico** para sistem
 
 | Categoria                        | Software              | Versão          | Função no Projeto                             |
 |----------------------------------|-----------------------|-----------------|-----------------------------------------------|
-| Ambiente de Desenvolvimento FPGA | Intel Quartus Prime   | 23.1 Lite Edition | Criação dos módulos e programação da FPGA.    |
+| Ambiente de Desenvolvimento FPGA | Intel Quartus Prime   | 23.1 Lite Edition | Criação dos módulos e programação da FPGA.  |
+| Biblioteca de módulos            | Quartus IP Catalog    | 23.1 Lite Edition | Importação dos módulos preexistentes (RAM, PLL) |
 | Simulação                        | Icarus Verilog        | v11-20210204    | Simulação dos algoritmos na memória           |
 | Linguagem HDL                    | Verilog               | Verilog 2001    | Implementação do código do coprocessador.     |
 
