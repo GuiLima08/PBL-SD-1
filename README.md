@@ -75,6 +75,18 @@ A imagem acima possui ângulos retos e quadrados perfeitos, utilizados para melh
 
 ## 7. Análise dos Resultados
 
+![pixelreplication](https://github.com/user-attachments/assets/6c6866b7-51a6-47a6-a530-b663807d49c4)
+*Aplicação do algoritmo de Replicação de Pixel*
+
+![nnzoomout](https://github.com/user-attachments/assets/f99f99f1-aa6f-4ff3-8c3e-1bedeee66b11)
+*Aplicação do algoritmo de Zoom Out com Vizinho Mais Próximo*
+
+![nnzoomin](https://github.com/user-attachments/assets/b49bacd0-3690-4f3a-8ed6-cbff3d2e2755)
+*Aplicação do algoritmo de Zoom In com Vizinho Mais Próximo*
+
+![blockaverage](https://github.com/user-attachments/assets/6ae147f9-5f01-4fc4-943e-585f32ef90c9)
+*Aplicação do algoritmo de Média de Blocos*
+
 Em análise do produto obtido nesta etapa do desenvolvimento, pode-se afirmar que os requisitos do problema foram implementados. Todos os algoritmos foram implementados, controlados pelo usuário através das chaves e botões da placa, como foi pedido. Um erro observado durante o desenvolvimento foram *“estrias”* minúsculas de coloração vermelha na imagem; tal erro foi solucionado ao alterar a lógica do cálculo do *offset* da imagem, fazendo a verificação e correção de valores inválidos.
 
 | Requisito | Resultado |
