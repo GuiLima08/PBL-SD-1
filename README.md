@@ -64,6 +64,7 @@ O projeto elaborado possui módulos escritos em linguagem verilog que interagem 
 As entradas são realizadas por meio das chaves e botôes da placa. As sáidas são mandadas para um monitor com entrada VGA.
 
 | **Entradas** | **Saídas** |
+|---|---|
 |Clock de 50MHz | Red, Green, Blue (8 bits) |
 | Botão de Reset | Hsync, Vsync |
 | Seleção do algoritmo (3 bits) | Blank |
@@ -71,7 +72,9 @@ As entradas são realizadas por meio das chaves e botôes da placa. As sáidas s
 | Botão de Start | Clock de 25MHz |
 
 A seleção de algoritmo é um Opcode que determina o tipo de algoritmo a ser aplicado na imagem.
+
 | **OPCODE** | **ALGORITMO** |
+|---|---|
 | **000** | Média de Blocos |
 | **001** | Vizinho mais próximo |
 | **010** | Decimação / Amostragem |
@@ -81,6 +84,7 @@ A seleção de algoritmo é um Opcode que determina o tipo de algoritmo a ser ap
 A seleção de fator determina qual o fator do redimensionamento aplicado na imagem.
 
 | **OPCODE** | **FATOR** |
+|---|---|
 | **00** | 2x |
 | **01** | 4x |
 | **10** | 8x (zoom out) / 4x(zoom in) |
@@ -107,6 +111,8 @@ Coprocessador responsável pelo processamento da imagem. Lê a imagem original n
 ### Unidade de Controle (UC)
 A UC é uma máquina de estados finitos que coordena o funcionamento do coprocessador. O gerenciamento da UC garante que a ULA realize o processamento na ordem correta e que os sinais de controle sejam gerados no momento adequado. Uma de suas saídas é a de frame pronto. O frame pronto serve para indicar que o processamento da imagem foi finalizado.
 
+| **Estado**| |
+|---|---|
 | **IDLE** | Aguarda sinal de aplicação de redimensionamento vindo do botão Start. |
 | **RUN** | Inicializa a ULA. Quando o processamento termina, ativa o sinal de frame pronto. |
 | **DONE** | Mantém o sinal de frame pronto até receber um novo sinal de aplicação de redimensionamento. |
@@ -115,6 +121,8 @@ A UC é uma máquina de estados finitos que coordena o funcionamento do coproces
 ### Unidade Lógica e Aritmética (ULA)
 A ULA desempenha o papel de aplicar os algoritmos sobre a imagem. Calcula os endereços de leitura na RAM Initial e de escrita na RAM Final. Fornece o sinal de ativação de escrita na memória. Os algoritmos são aplicados por meio de uma máquina de estados finitos.
 
+| **Estado**| |
+|---|---|
 | **IDLE** | Aguarda  o sinal de inicialização da UC. |
 | **FETCH** | Cálculo do endereço de leitura do pixel na imagem original. |
 | **WAIT FETCH** | Aguarda a leitura da memória. |
