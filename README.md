@@ -111,6 +111,11 @@ Coprocessador responsável pelo processamento da imagem. Lê a imagem original n
 ### Unidade de Controle (UC)
 A UC é uma máquina de estados finitos que coordena o funcionamento do coprocessador. O gerenciamento da UC garante que a ULA realize o processamento na ordem correta e que os sinais de controle sejam gerados no momento adequado. Uma de suas saídas é a de frame pronto. O frame pronto serve para indicar que o processamento da imagem foi finalizado.
 
+
+<img width="1920" height="1080" alt="Zoom Digital Redimensionamento de Imagens com FPGA em Verilog" src="https://github.com/user-attachments/assets/6980ea8a-8414-4ff3-a240-254db5b8cdc9" />
+
+
+
 | **Estado**| |
 |---|---|
 | **IDLE** | Aguarda sinal de aplicação de redimensionamento vindo do botão Start. |
@@ -120,6 +125,10 @@ A UC é uma máquina de estados finitos que coordena o funcionamento do coproces
 
 ### Unidade Lógica e Aritmética (ULA)
 A ULA desempenha o papel de aplicar os algoritmos sobre a imagem. Calcula os endereços de leitura na RAM Initial e de escrita na RAM Final. Fornece o sinal de ativação de escrita na memória. Os algoritmos são aplicados por meio de uma máquina de estados finitos.
+
+
+<img width="1920" height="1080" alt="Zoom Digital Redimensionamento de Imagens com FPGA em Verilog(1)" src="https://github.com/user-attachments/assets/fc846ef5-34b3-4981-ae41-dcce9af45b34" />
+
 
 | **Estado**| |
 |---|---|
