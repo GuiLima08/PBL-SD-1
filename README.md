@@ -55,7 +55,74 @@ O problema consiste na construção de um **coprocessador gráfico** para sistem
 ### Periféricos Adicionais  
 - **Monitor 640x480** com entrada VGA.
 
-## 5. (nycolas coloca tua parte aq)
+## 5. Arquitetura
+
+O projeto elaborado possui módulos escritos em linguagem verilog que interagem entre si para realizar o processo de redimensionamento e exibição de uma imagem de resolução 160x120. A arquitetura é composta dos seguintes principais módulos: RAM Initial, RAM Final, Coprocessor, PLL 100 MHz e VGA Driver. Todos esses módulos são englobados pelo módulo Top-Level responsável pelas entradas/saídas e comunicação entre os módulos.
+
+<img width="556" height="381" alt="Michael_Rosoft drawio" src="https://github.com/user-attachments/assets/efa204d1-8ed0-4a62-8401-023e9e526e2e" />
+
+As entradas são realizadas por meio das chaves e botôes da placa. As sáidas são mandadas para um monitor com entrada VGA.
+
+| **Entradas** | **Saídas** |
+|Clock de 50MHz | Red, Green, Blue (8 bits) |
+| Botão de Reset | Hsync, Vsync |
+| Seleção do algoritmo (3 bits) | Blank |
+| Seleção do fator de zoom (2 bits) | Sync |
+| Botão de Start | Clock de 25MHz |
+
+A seleção de algoritmo é um Opcode que determina o tipo de algoritmo a ser aplicado na imagem.
+| **OPCODE** | **ALGORITMO** |
+| **000** | Média de Blocos |
+| **001** | Vizinho mais próximo |
+| **010** | Decimação / Amostragem |
+| **011** | Replicação de Pixel |
+| **1XX** | Imagem Original|
+
+A seleção de fator determina qual o fator do redimensionamento aplicado na imagem.
+
+| **OPCODE** | **FATOR** |
+| **00** | 2x |
+| **01** | 4x |
+| **10** | 8x (zoom out) / 4x(zoom in) |
+| **11** | 2x |
+
+### PLL 100 MHz
+O PLL é responsável por converter o clock natural da placa de 50 MHz em um clock de 100 MHz. Como a RAM utilizada é do tipo M10k, é necessário uma frequência de no mínimo 75 MHz para que o atraso de leitura da RAM seja de 1 ciclo. O atraso de RAM adotado para o projeto foi de 1 ciclo e a frequência utilizada foi de 100 MHz para as memórias.
+
+### RAM Initial
+Armazena a imagem original. Fornece dados da imagem original ao coprocessador. Está sempre em modo de leitura.
+
+### RAM Final
+Armazena a imagem processada pelo coprocessador. Fornece dados da imagem a ser exibida para o VGA Driver. O endereço de leitura do VGA Driver e o endereço de escrita do coprocessador são multiplexados pelo Top-Level para que não haja tentativa de leitura da memória antes do término da escrita da imagem processada. O modo de escrita é habilitado e desabilitado pelo coprocessador.
+
+### VGA Driver
+Lê a memória RAM Final para exibir a imagem processada. A imagem será mostrada em escala de cinza. Realiza a varredura do monitor e informa as coordenadas do próximo pixel a ser exibido. Informação usada para calcular o endereço de leitura da RAM Final.
+
+### Logic
+Bloco de lógica e aritmética responsável por calcular o endereço de leitura do VGA Driver e multiplexa-lo com o endereço de escrita vindo do coprocessador para que resulte no endereço que será entrada na RAM Final. O sinal de controle do multiplexador é o frame pronto vindo do coprocessador.
+
+### Coprocessor
+Coprocessador responsável pelo processamento da imagem. Lê a imagem original na RAM Initial e escreve o resultado do processamento na RAM Final. É composto por dois módulos: Unidade de Controle (UC) e Unidade Lógica e Aritmética (ULA).
+
+### Unidade de Controle (UC)
+A UC é uma máquina de estados finitos que coordena o funcionamento do coprocessador. O gerenciamento da UC garante que a ULA realize o processamento na ordem correta e que os sinais de controle sejam gerados no momento adequado. Uma de suas saídas é a de frame pronto. O frame pronto serve para indicar que o processamento da imagem foi finalizado.
+
+| **IDLE** | Aguarda sinal de aplicação de redimensionamento vindo do botão Start. |
+| **RUN** | Inicializa a ULA. Quando o processamento termina, ativa o sinal de frame pronto. |
+| **DONE** | Mantém o sinal de frame pronto até receber um novo sinal de aplicação de redimensionamento. |
+| **PREPARE**| Atraso de 1 ciclo de clock antes de voltar para RUN. |
+
+### Unidade Lógica e Aritmética (ULA)
+A ULA desempenha o papel de aplicar os algoritmos sobre a imagem. Calcula os endereços de leitura na RAM Initial e de escrita na RAM Final. Fornece o sinal de ativação de escrita na memória. Os algoritmos são aplicados por meio de uma máquina de estados finitos.
+
+| **IDLE** | Aguarda  o sinal de inicialização da UC. |
+| **FETCH** | Cálculo do endereço de leitura do pixel na imagem original. |
+| **WAIT FETCH** | Aguarda a leitura da memória. |
+| **PREPARATION** | Cálculo do valor do pixel a ser escrito na memória. Caso o algoritmo aplicado seja a média de blocos, há retorno para o estado de fetch para ler os demais pixels para realização da média. |
+| **CALC ADDRESS** | Cálculo do endereço de escrita do pixel. |
+| **WRITE** | Habilita sinal de escrita da memória. |
+| **NEXT** | Incrementa os registradores para o cálculo do próximo endereço de leitura. Caso o algoritmo aplicado seja a replicação de pixel, não há necessidade de ler outro pixel da memória enquanto o lido estiver sendo replicado, por isso há retorno para o estado de CALC ADDRESS. Enquanto a imagem não tiver sido completamente processada, haverá retorno para o estado de FETCH. |
+| **DONE** | Sinaliza que a ULA terminou o processamento. | 
 
 
 
